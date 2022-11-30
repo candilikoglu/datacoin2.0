@@ -41,15 +41,6 @@ function App() {
               ))
           )} </h2> </center>
           </div>
-              <div>
-                <div> 
-                    <p> Your QR code is</p>
-                </div>
-                <div id="qrcode"></div>
-                <script type="text/javascript">
-                    new QRCode(document.getElementById("qrcode"), `https://www.google.com/search?q={publicKeyData}`);
-                </script>
-            </div>
           <div class="row">
               <div class="column">
                 <center> <h2> <u> Unconfirmed Balance </u> </h2> </center>
@@ -63,14 +54,19 @@ function App() {
             <a href="walletUI.html" class="secbutton">Copy Key</a>
           </div>
         </div>
+                      <center>
+                <h3> Your QR Code </h3>
+              </center>
+          <div id="qrcode" style="width:100px; height:100px; margin-top:15px; margin: 0 auto; display: block;"></div>
+                  <script type="text/javascript">
+                    new QRCode(document.getElementById("qrcode"), `https://www.google.com/search?q={publicKeyData}`);
+                  </script>
     </section>
         <div>
             <p> Your public key is: {publicKeyData}</p>
         </div>
     </div>
     )
-
-
 }
 
 export default App
