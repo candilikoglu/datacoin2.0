@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <script src="../app/index.js"></script>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="qrcode.js"></script>
+  <script type="text/javascript" src="qr.js"></script>
   <head>
     <meta charset="utf-8">
     <title>Client Account Page</title>
@@ -93,7 +96,7 @@
       clear: both;
     }
   .image-cont{
-    width = 100%;
+    width : 100%;
   }
   .image-shape{
     border-radius: 10px;
@@ -133,6 +136,13 @@
             <a href="walletUI.html" class="secbutton">Refresh</a>
             <a href="walletUI.html" class="secbutton">Copy Key</a>
           </div>
+              <center>
+                <h3> Your QR Code </h3>
+              </center>
+          <div id="qrcode" style="width:100px; height:100px; margin-top:15px; margin: 0 auto; display: block;"></div>
+                  <script type="text/javascript">
+                    new QRCode(document.getElementById("qrcode"), `https://www.google.com/search?q={publicKeyData}`);
+                  </script>
     </section>
     <!-- Main section ends here -->
   </body>

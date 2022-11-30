@@ -41,6 +41,15 @@ function App() {
               ))
           )} </h2> </center>
           </div>
+              <div>
+                <div> 
+                    <p> Your QR code is</p>
+                </div>
+                <div id="qrcode"></div>
+                <script type="text/javascript">
+                    new QRCode(document.getElementById("qrcode"), `https://www.google.com/search?q={publicKeyData}`);
+                </script>
+            </div>
           <div class="row">
               <div class="column">
                 <center> <h2> <u> Unconfirmed Balance </u> </h2> </center>
@@ -60,6 +69,8 @@ function App() {
         </div>
     </div>
     )
+
+
 }
 
 export default App
