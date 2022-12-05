@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import React, {useEffect, useState} from 'react'
-=======
-import React, {useEffect} from 'react'
->>>>>>> 648f558fe21cbcc8ab0e89bcae19a242ae5a0c3f
+
 import styles from"./walletStyle.css"
 import { Link,  useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
@@ -12,7 +9,6 @@ import { toast, ToastContainer } from "react-toastify";
 
 
 const WalletScreen = () => {
-<<<<<<< HEAD
   const [publicKeyData, setPublicKeyData] = useState("")
     const [balanceData, setBalanceData] = useState("")
     const [transactionData, setNumTransaction] = useState("")
@@ -35,7 +31,6 @@ const WalletScreen = () => {
       .then(data => {setNumTransaction(data)})
   }, [])
 
-=======
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
   useEffect(() => {
@@ -66,7 +61,6 @@ const WalletScreen = () => {
     removeCookie("jwt");
     navigate("/login");
   };
->>>>>>> 648f558fe21cbcc8ab0e89bcae19a242ae5a0c3f
 
     return (
       <div className={styles.Body}>
