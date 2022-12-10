@@ -26,6 +26,8 @@ class Transaction {
     Transaction.signTransaction(this, senderWallet);
   }
 
+
+
   static transactionWithOutputs(senderWallet, outputs) {
     const transaction = new this();
     transaction.outputs.push(...outputs);
@@ -33,6 +35,7 @@ class Transaction {
 
     return transaction;
   }
+
 
   static newTransaction(senderWallet, recipient, amount) {
     if (amount > senderWallet.balance) {

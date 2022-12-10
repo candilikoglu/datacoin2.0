@@ -31,7 +31,7 @@ const WalletScreen = () => {
       .then(data => {setNumTransaction(data)})
   }, [])
 
-  const navigate = useNavigate();
+/*  const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
   useEffect(() => {
     const verifyUser = async () => {
@@ -60,13 +60,13 @@ const WalletScreen = () => {
   const logout = () => {
     removeCookie("jwt");
     navigate("/login");
-  };
+  };*/
 
     return (
       <div className={styles.Body}>
         <section class = "header">
           <img src="images/smallLogo.png" alt="Logo" class="image-cont image-shape" height="100" width="100" align="left"/>
-          <button onClick={logout} align="right">Logout</button>
+          <button  align="right">Logout</button>
           <center>  <h3> Data Pirates CryptoCurrency </h3> </center>
           <div class="container2">
             <center> <h1> Account Overview </h1> </center>

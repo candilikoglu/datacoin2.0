@@ -19,6 +19,9 @@ const wallet = new Wallet();
 // A miner consisting of the local blockchain, transaction pool, currency wallet and the p2pServer
 const miner = new Miner(bc, tp, wallet, p2pServer);
  
+app.use(cors());
+app.use(express.json())
+
 app.get('/blocks', (req, res) => {
   res.json(bc.chain);
 });
@@ -26,6 +29,31 @@ app.get('/blocks', (req, res) => {
 app.get('/transactions', (req, res) => {
   res.json((tp.transactions).length);
 });
+
+app.get('/transactList', (req, res) => {
+  transactionList = JSON.stringify(tp.transactions);
+  amountPos = transactionList.indexOf("amount");
+  amount = ""
+  i = amountPos
+  if(amountPos != -1 && transactionList != null){
+     while(transactionList.charAt(i)!= ':'){
+          i++;
+      }
+      i++;
+      while(Number.isInteger(parseInt(transactionList.charAt(i)))){
+       amount += parseInt(transactionList.charAt(i))
+       i++;
+      }
+  }else{
+    amount = "00000";
+  }
+  addressPos = 
+  res.json(amount);
+  console.log(amount)
+  
+});
+
+
 
 app.get('/publicKey', (req, res) => {
   res.json(wallet.publicKey);
